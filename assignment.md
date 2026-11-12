@@ -1,21 +1,24 @@
-# Email Studio Lab
+# Email Studio Lab — Assignment
 
 *A hands-on Claude Code course · no coding needed*
 
-You will set up an email marketing studio and run it with Claude Code. Claude plans a launch campaign, writes the emails, personalizes them for each group of customers, and sends them, safely, to a practice email server. Along the way you use every Claude Code feature on the CCAR-F exam.
+Source: https://claude.ai/artifact/JXWLHRv2JzQRQB99n9ZU6n
 
 15 steps · about 30–60 min each · no real emails are sent · no Resend account needed
 
+You will set up an email marketing studio and run it with Claude Code. Claude plans a launch campaign, writes the emails, personalizes them for each group of customers, and sends them, safely, to a practice email server. Along the way you use every Claude Code feature on the CCAR-F exam.
+
 ## Before you start
 
-- Install Node.js 22 or newer from nodejs.org. Check with `node --version`.
-- Install Git. Check with `git --version`. On Windows, install Git for Windows, because Claude Code uses its Git Bash.
-- Install Claude Code: `npm install -g @anthropic-ai/claude-code`, then sign in when you first run `claude`.
-- Make your studio folder and open Claude Code in it: `mkdir my-email-studio · cd my-email-studio · git init · claude`
+1. Install **Node.js 22 or newer** from nodejs.org. Check with `node --version`.
+2. Install **Git**. Check with `git --version`. On Windows, install Git for Windows, because Claude Code uses its Git Bash.
+3. Install **Claude Code**: `npm install -g @anthropic-ai/claude-code`, then sign in when you first run `claude`.
+4. Make your studio folder and open Claude Code in it:
+`mkdir my-email-studio` · `cd my-email-studio` · `git init` · `claude`
 
-## How every step works
+#### How every step works
 
-1. **BUILD**: Paste the build prompt in Claude Code, in your studio folder.
+1. **BUILD**: Paste the build prompt. In Claude Code, in your studio folder.
 2. **FRESH**: Start a new session. Type `/exit`, then run `claude` again.
 3. **CHECK**: Paste the check prompt. A fresh Claude tests your work. It didn't build it, so it's honest.
 4. **DONE**: Answer its questions. Then tick Done on the step.
@@ -41,9 +44,9 @@ my-email-studio/
 └── scripts/review.mjs   automatic review
 ```
 
-Claude will ask permission before it writes inside `.claude/` or to `.mcp.json`. That's normal. Read what it wants to do, then approve.
+**Claude will ask permission** before it writes inside `.claude/` or to `.mcp.json`. That's normal. Read what it wants to do, then approve.
 
-No brand of your own? Use the sample: **Kettlebird Tea**, a made-up tea shop launching a monthly tea box called **The Steep Club**. The prompts below use it.
+**No brand of your own?** Use the sample: Kettlebird Tea, a made-up tea shop launching a monthly tea box called The Steep Club. The prompts below use it.
 
 ---
 
@@ -51,13 +54,16 @@ No brand of your own? Use the sample: **Kettlebird Tea**, a made-up tea shop lau
 
 Set up the studio, give it a brand voice, plan a campaign and write the emails. Nothing gets sent in this part.
 
-## Step 1 · Look before you build  *(Real-world habit · 2.4)*
+## Step 1 · Look before you build  *(2.4)*
 
-Search for skills other people made, and decide which ones to trust.
+*Search for skills other people made, and decide which ones to trust.*
 
 **In plain words:** a skill is like an app for Claude. Before you build one, look in the app store. Download counts can be faked, so also check who made it.
 
-**Build** (paste in Claude Code)
+**Build**
+
+*(Paste in Claude Code)*
+
 ```
 I'm setting up an email marketing studio in this folder. Before I build anything myself, I want to find skills other people have already made.
 
@@ -75,7 +81,10 @@ I'm setting up an email marketing studio in this folder. Before I build anything
 Don't install anything yet.
 ```
 
-**Check** (new session: `/exit`, then `claude`, then paste)
+**Check**
+
+*(New session: /exit, then claude, then paste)*
+
 ```
 Check my work in notes/skills-i-chose.md. Don't change any files. Test it, don't just read it:
 
@@ -87,20 +96,26 @@ Give me a short table: Check | OK or Problem | What you found.
 Then ask me two quick questions, one at a time, to see if I understand why install counts alone aren't enough.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - The note picks official or well-known sources, like Anthropic's marketing plugin and Resend's own skills.
 - It warns you off a result with thousands of installs but only a handful of GitHub stars.
 - The check may find a skill that was renamed. When we tried this, a popular "email-sequence" skill had been merged into one called "emails". Ask Claude to fix the note.
 
-**Exam note:** The exam asks the same question about MCP servers: for a standard need, use an existing community server first, and build your own only for work that is special to your team.
+#### Exam note
+
+The exam asks the same question about MCP servers: for a standard need, use an existing community server first, and build your own only for work that is special to your team.
 
 ## Step 2 · Set up your studio  *(3.1)*
 
-Install a plugin for this project only, and write the studio's CLAUDE.md.
+*Install a plugin for this project only, and write the studio's CLAUDE.md.*
 
 **In plain words:** CLAUDE.md is the studio's notice board. Claude reads it every time it starts work here. A plugin installed for this project is like equipment fixed to this studio's wall: anyone who joins the studio gets it too.
 
 **Build**
+
+*(Paste in Claude Code)*
+
 ```
 Let's set up my email studio in this folder.
 
@@ -115,12 +130,14 @@ Let's set up my email studio in this folder.
 Then tell me what I have to do so the plugin loads.
 ```
 
-**Then**
-- Type `/exit` and run `claude` again. Plugins load when a session starts.
-- Accept the prompts to trust the folder and the plugin.
-- Type `/marketing:` and you should see the plugin's commands appear.
+1. Type `/exit` and run `claude` again. Plugins load when a session starts.
+2. Accept the prompts to trust the folder and the plugin.
+3. Type `/marketing:` and you should see the plugin's commands appear.
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check that my studio is set up correctly. Don't change any files. Test it, don't just read it:
 
@@ -133,20 +150,26 @@ Give me a short table: Check | OK or Problem | What you saw.
 Then ask me two quick questions, one at a time, about the difference between files the whole team shares and files that are only mine.
 ```
 
-**You'll know it worked when**
-- `claude plugin list` shows marketing with Scope: project.
-- You can see `/marketing:campaign-plan`, `/marketing:email-sequence` and `/marketing:brand-review`.
-- `git check-ignore` names your .gitignore line.
+#### You'll know it worked when
 
-**Exam note:** Team standards go at project level: CLAUDE.md in the repo, `.claude/settings.json`. Teammates get them when they clone. Your personal files (`~/.claude/CLAUDE.md`, `settings.local.json`) never reach anyone else. If a new teammate isn't getting the instructions, they sit at user level.
+- `claude plugin list` shows **marketing** with **Scope: project**.
+- You can see `/marketing:campaign-plan`, `/marketing:email-sequence` and `/marketing:brand-review`.
+- `git check-ignore` names your `.gitignore` line.
+
+#### Exam note
+
+Team standards go at project level: CLAUDE.md in the repo, `.claude/settings.json`. Teammates get them when they clone. Your personal files (`~/.claude/CLAUDE.md`, `settings.local.json`) never reach anyone else. If a new teammate isn't getting the instructions, they sit at user level.
 
 ## Step 3 · Your brand voice  *(3.1 · 3.5)*
 
-Let Claude interview you, then keep the voice in its own file that CLAUDE.md imports.
+*Let Claude interview you, then keep the voice in its own file that CLAUDE.md imports.*
 
 **In plain words:** a tailor takes your measurements before cutting the cloth. Here Claude asks first, then writes. The `@brand/voice.md` line is a note pinned to the notice board that says "also read the brand book".
 
 **Build**
+
+*(Paste in Claude Code)*
+
 ```
 Interview me about my brand so you can write our brand voice guide. Ask one question at a time and wait for my answer. Ask at most six questions.
 
@@ -155,11 +178,13 @@ If I don't have a brand, I'll say "use the sample": Kettlebird Tea, a small made
 When you have enough, write brand/voice.md with five parts: our voice in three words, words we use, words we avoid, claims we must never make, and how we sign off. Then add the line @brand/voice.md to CLAUDE.md so it loads in every session.
 ```
 
-**Then**
-- Answer each question. Making things up is fine with the sample.
-- When the file is written, ask Claude to commit it.
+1. Answer each question. Making things up is fine with the sample.
+2. When the file is written, ask Claude to commit it.
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test my brand voice setup. Don't change any files.
 
@@ -171,20 +196,27 @@ Give me a short table: Test | Pass or Fail | What happened.
 Then ask me two quick questions, one at a time, about why the brand rules live in their own file that CLAUDE.md imports.
 ```
 
-**You'll know it worked when**
-- The fresh session follows your voice without opening any file, and names brand/voice.md as the source.
+#### You'll know it worked when
+
+- The fresh session follows your voice **without opening any file**, and names `brand/voice.md` as the source.
 - It refuses the detox line, names the rule, and offers a safe subject line.
 
-**Exam note:** @import keeps CLAUDE.md small: each project imports only the standards it needs. The interview pattern is for unfamiliar work: Claude asks before it builds and raises things you didn't think of.
-Exam answer: to see which memory files are loaded, use `/memory`. In today's product, `/context` shows it.
+#### Exam note
+
+`@import` keeps CLAUDE.md small: each project imports only the standards it needs. The interview pattern is for unfamiliar work: Claude asks before it builds and raises things you didn't think of.
+
+Exam answer: to see which memory files are loaded, use /memory. In today's product, /context shows it.
 
 ## Step 4 · Plan the campaign  *(3.2)*
 
-Use a ready-made skill from the plugin to turn an idea into a full plan.
+*Use a ready-made skill from the plugin to turn an idea into a full plan.*
 
 **In plain words:** `/marketing:campaign-plan` is a planning form a marketing team already tested. You fill in the blanks and it builds the structure.
 
 **Build**
+
+*(Paste in Claude Code)*
+
 ```
 /marketing:campaign-plan Launch The Steep Club to our waitlist.
 
@@ -197,6 +229,9 @@ Save the finished plan to campaigns/steep-club-launch/plan.md, then commit it.
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check the campaign plan in campaigns/steep-club-launch/plan.md. Don't change any files. Test it, don't just read it:
 
@@ -209,20 +244,26 @@ Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time, about why we used an existing planning skill instead of writing our own prompt.
 ```
 
-**You'll know it worked when**
-- plan.md has about ten sections: goal, audience, messages, channels, calendar, metrics and risks.
+#### You'll know it worked when
+
+- `plan.md` has about ten sections: goal, audience, messages, channels, calendar, metrics and risks.
 - It leaves out prices and promises your brand rules forbid, without being told.
 - When we tried this, the check found the calendar gave weekdays but no actual dates. If yours does too, ask Claude to add them.
 
-**Exam note:** Type `/marketing:campaign-plan` with nothing after it and look at the hint. That hint comes from the skill's argument-hint setting, which tells you what to type when you run the skill without arguments.
+#### Exam note
+
+Type `/marketing:campaign-plan` with nothing after it and look at the hint. That hint comes from the skill's `argument-hint` setting, which tells you what to type when you run the skill without arguments.
 
 ## Step 5 · Practice leads  *(3.5 · 3.1)*
 
-Use two example rows to get the exact format, and give one folder its own rules.
+*Use two example rows to get the exact format, and give one folder its own rules.*
 
 **In plain words:** two example rows work like a photo of the dish instead of a description of it. `leads/CLAUDE.md` is a sign on one room's door: Claude reads it when it walks into that room.
 
 **Build**
+
+*(Paste in Claude Code)*
+
 ```
 Make a list of practice leads for our launch.
 
@@ -240,6 +281,9 @@ Commit when you're done.
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test my practice leads. Don't change any files.
 
@@ -252,19 +296,25 @@ Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time, about why some rules belong to one folder only.
 ```
 
-**You'll know it worked when**
-- 24 people, 8 per group, every address at @example.com.
-- Claude refuses to add the Gmail address and quotes leads/CLAUDE.md, even though it never opened that file. It loaded on its own when Claude opened a file in leads/.
+#### You'll know it worked when
 
-**Exam note:** When prose instructions get misread, give 2–3 input/output examples, not more prose. A CLAUDE.md inside a subfolder loads when Claude works on files in that folder.
+- 24 people, 8 per group, every address at `@example.com`.
+- Claude refuses to add the Gmail address and quotes `leads/CLAUDE.md`, even though it never opened that file. It loaded on its own when Claude opened a file in `leads/`.
+
+#### Exam note
+
+When prose instructions get misread, give 2–3 input/output examples, not more prose. A CLAUDE.md inside a subfolder loads when Claude works on files in that folder.
 
 ## Step 6 · Email rule and sequence  *(3.3)*
 
-Write a rule that attaches itself to every email file, then write the emails.
+*Write a rule that attaches itself to every email file, then write the emails.*
 
 **In plain words:** a path rule is a sticky note that attaches itself to every email file, in any campaign folder. CLAUDE.md is read for everything. This note shows up only when Claude works on an email.
 
-**Build 1 of 2** (paste, then approve the edit)
+**Build 1 of 2**
+
+*(Paste in Claude Code, then approve the edit)*
+
 ```
 Create a rule that applies to every email file in any campaign, and only to email files.
 
@@ -286,9 +336,12 @@ Under it, write the rule in plain English. Each email file must:
 Commit when you're done.
 ```
 
-**Then:** Start a new session (`/exit`, then `claude`) so the new rule is picked up.
+1. Start a new session (`/exit`, then `claude`) so the new rule is picked up.
 
-**Build 2 of 2** (paste in the new session)
+**Build 2 of 2**
+
+*(Paste in the new session)*
+
 ```
 /marketing:email-sequence Product launch sequence for The Steep Club, sent to everyone on our waitlist.
 
@@ -298,6 +351,9 @@ Save each email as its own file in campaigns/steep-club-launch/emails/, named 01
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test the emails in campaigns/steep-club-launch/emails/. Don't change any files. Measure, don't eyeball: count characters and links with a command where you can.
 
@@ -312,32 +368,44 @@ Give me one table with a row per email and a column per check (Pass or Fail, wit
 Then ask me two quick questions, one at a time, about why this rule uses a paths pattern instead of living in CLAUDE.md.
 ```
 
-**You'll know it worked when**
-- Four email files, each starting with Subject: and Preview:, with real character counts under the limits.
+#### You'll know it worked when
+
+- Four email files, each starting with `Subject:` and `Preview:`, with real character counts under the limits.
 - One link per email, and the footer as plain text.
 - When we tried this without the rule, the plugin wrote three subject options and a notes section in each file. With the rule, every email followed the studio's format.
 
-**Exam note:** For conventions that apply to files spread across folders, use `.claude/rules/` with `paths:` patterns. A subfolder CLAUDE.md covers one folder only. One big CLAUDE.md with headings relies on Claude guessing. A skill only works when someone runs it. Use `/context` to see which rules loaded.
+#### Exam note
+
+For conventions that apply to files spread across folders, use `.claude/rules/` with `paths:` patterns. A subfolder CLAUDE.md covers one folder only. One big CLAUDE.md with headings relies on Claude guessing. A skill only works when someone runs it. Use `/context` to see which rules loaded.
 
 ## Step 7 · Fresh-eyes review  *(3.6 · 3.5 · 2.5)*
 
-Review in a new session, fix related problems in one message, then confirm with search.
+*Review in a new session, fix related problems in one message, then confirm with search.*
 
 **In plain words:** when you proofread your own letter, you see what you meant to write. A new session is a second reader who didn't write it.
 
-**Build 1 of 2** (new session, then paste)
+**Build 1 of 2**
+
+*(New session, then paste)*
+
 ```
 /marketing:brand-review campaigns/steep-club-launch/emails/
 
 Review all four emails against brand/voice.md and .claude/rules/emails.md. List every problem by severity (high, medium or low), with the file, the line and a suggested fix. Don't change any files yet.
 ```
 
-**Build 2 of 2** (same session, after you read the review)
+**Build 2 of 2**
+
+*(Same session, after you read the review)*
+
 ```
 Fix all the problems from your review in one message, keeping all four emails consistent with each other. If a fix means changing a rule file too, change it. Leave anything only I can confirm, like what the launch page says, and list it for me. Then commit.
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check that the review fixes worked. Don't change any files.
 
@@ -350,19 +418,25 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: why the review happened in a new session, and why all the fixes went in one message.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - The review lists problems by severity. Ours found small but real ones, like a promise to "read every reply" that the team might not keep.
 - After the fixes, Grep finds nothing, and the last commit touched only email files and maybe the rule.
 
-**Exam note:** The session that wrote something keeps its own reasoning and rarely questions it, so review in a fresh, independent session. Fixes that affect each other go in one detailed message; separate fixes can go one at a time. Glob finds files by name; Grep finds text inside files.
+#### Exam note
+
+The session that wrote something keeps its own reasoning and rarely questions it, so review in a fresh, independent session. Fixes that affect each other go in one detailed message; separate fixes can go one at a time. Glob finds files by name; Grep finds text inside files.
 
 ## Step 8 · Your own skill: personalize  *(3.2)*
 
-Build a skill with the three settings the exam asks about, and use it.
+*Build a skill with the three settings the exam asks about, and use it.*
 
 **In plain words:** a skill is a recipe card. Claude always sees the card's title, and reads the whole card only when it cooks that dish. `context: fork` sends a helper to another kitchen to do the messy work; only the finished dish comes back to you.
 
-**Build 1 of 2** (paste, then approve the edit)
+**Build 1 of 2**
+
+*(Paste in Claude Code, then approve the edit)*
+
 ```
 Create my own skill for this project at .claude/skills/personalize/SKILL.md.
 
@@ -380,16 +454,22 @@ allowed-tools: Read, Glob, Grep, Write
 If no campaign folder is given, it should stop and list the campaign folders that exist. Commit when you're done.
 ```
 
-**Then:** Start a new session so the skill is picked up.
+1. Start a new session so the skill is picked up.
 
-**Build 2 of 2** (paste in the new session)
+**Build 2 of 2**
+
+*(Paste in the new session)*
+
 ```
 /personalize campaigns/steep-club-launch
 ```
 
-**Then:** Ask Claude: "Commit the new files with a clear message."
+1. Ask Claude: *"Commit the new files with a clear message."*
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test my personalize skill and what it made. Don't change any files.
 
@@ -402,13 +482,18 @@ Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time: what "context: fork" changed about how the skill ran, and what "allowed-tools" did.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - 12 new files. Only the opening line and one sentence differ from the original.
 - Your main chat shows only a short summary, not the work itself.
-- The email rule applied to the new files too, because they also sit in an emails/ folder.
+- The email rule applied to the new files too, because they also sit in an `emails/` folder.
 
-**Exam note:** `context: fork` runs the skill in its own context, so long output stays out of your chat. `argument-hint` tells you what to type when you run it with no arguments. A personal copy goes in `~/.claude/skills/` under a different name, so it doesn't clash with the team's.
-Exam answer: allowed-tools *restricts* which tools the skill can use. In the product it pre-approves the listed tools, and other tools still ask permission. You may see that happen. On the exam, answer "restricts".
+#### Exam note
+
+`context: fork` runs the skill in its own context, so long output stays out of your chat. `argument-hint` tells you what to type when you run it with no arguments. A personal copy goes in `~/.claude/skills/` under a different name, so it doesn't clash with the team's.
+
+Exam answer: allowed-tools restricts which tools the skill can use. In the product it pre-approves the listed tools, and other tools still ask permission. You may see that happen. On the exam, answer "restricts".
+
 Not real: a `.claude/config.json` file with a commands list.
 
 ---
@@ -419,13 +504,17 @@ Connect a real email service through MCP, but point it at a practice server on y
 
 ## Step 9 · Connect Resend in practice mode  *(2.4)*
 
-Connect an email service through MCP, with settings that are safe by default.
+*Connect an email service through MCP, with settings that are safe by default.*
 
 **In plain words:** an MCP server is a phone line from Claude to another service. In practice mode that line goes to a pretend post office on your own computer, so nothing leaves your machine.
 
-**Before you start:** Open a second terminal window and run `npx emulate@0.12.3 start --service resend`. Wait until it says Ready and shows http://localhost:4000. Leave that window open for steps 9 to 11.
+1. Open a **second terminal** window and run: `npx emulate@0.12.3 start --service resend`
+2. Wait until it says **Ready** and shows `http://localhost:4000`. Leave that window open for steps 9 to 11.
 
-**Build** (paste, then approve the edit)
+**Build**
+
+*(Paste in Claude Code, then approve the edit)*
+
 ```
 Connect our studio to Resend, the email service, in practice mode.
 
@@ -450,11 +539,13 @@ Then update the rule in CLAUDE.md that says never to send email to real people. 
 Commit. Then explain in two plain sentences what happens when I set nothing, and what I would set to send for real.
 ```
 
-**Then**
-- Start a new session and approve the resend server when Claude Code asks.
-- Type `/mcp`. You should see resend connected.
+1. Start a new session and approve the **resend** server when Claude Code asks.
+2. Type `/mcp`. You should see resend connected.
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test my Resend connection. Don't change any files.
 
@@ -467,23 +558,30 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: why the key is written as ${RESEND_API_KEY:-re_practice} instead of the real key, and what happens if I forget to set anything.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - The test email gets an id and shows as delivered.
 - No real key appears anywhere in the repo or its history.
 
-**If something goes wrong**
-- Connection refused: the practice server isn't running. Start it again in your second terminal.
-- Pending approval: start claude and approve the resend server.
+#### If something goes wrong
 
-**Exam note:** The team's servers go in `.mcp.json`, which is committed. Your personal or experimental servers go in `~/.claude.json`. Credentials use `${VAR}` expansion, so no secret ever lands in the repo. `${VAR:-default}` means "use my setting if I have one, otherwise this safe value". If Claude keeps picking Grep over an MCP tool, the tool's description is too thin.
+- **Connection refused:** the practice server isn't running. Start it again in your second terminal.
+- **Pending approval:** start `claude` and approve the resend server.
+
+#### Exam note
+
+The team's servers go in `.mcp.json`, which is committed. Your personal or experimental servers go in `~/.claude.json`. Credentials use `${VAR}` expansion, so no secret ever lands in the repo. `${VAR:-default}` means "use my setting if I have one, otherwise this safe value". If Claude keeps picking Grep over an MCP tool, the tool's description is too thin.
 
 ## Step 10 · The safety guard  *(1.5)*
 
-Make a rule Claude cannot break, using a hook.
+*Make a rule Claude cannot break, using a hook.*
 
 **In plain words:** CLAUDE.md asks Claude to behave. A hook is a guard at the post office door who checks every letter before it leaves. Claude can't talk its way past the guard.
 
-**Build** (replace `[your email]` before you press Enter)
+**Build**
+
+*(Replace [your email] before you press Enter)*
+
 ```
 Add a safety guard so Claude can never send email to the wrong people, even by mistake. CLAUDE.md asks nicely. This guard makes sure.
 
@@ -498,9 +596,12 @@ Add a safety guard so Claude can never send email to the wrong people, even by m
 4. Commit the hook and .claude/settings.json.
 ```
 
-**Tip:** Use the same email you would sign up to Resend with. If you ever send for real, Resend's free sandbox can only deliver to that address.
+Use the same email you would sign up to Resend with. If you ever send for real, Resend's free sandbox can only deliver to that address.
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test the send guard for real. Don't change any files.
 
@@ -513,18 +614,25 @@ Don't try to get around a block. Give me a short table: Test | Pass or Fail | Wh
 Then ask me two quick questions, one at a time: what the difference is between the CLAUDE.md rule and this guard, and what exit code 2 means for a hook.
 ```
 
-**You'll know it worked when**
-- The send to Ayesha is blocked, with the guard's own message naming her address.
-- The sends to delivered@resend.dev and to your email go through.
+#### You'll know it worked when
 
-**Exam note:** Exam answer: the guide names only PostToolUse, for cleaning up tool results. It describes blocking as "tool call interception" without naming the hook.
+- The send to Ayesha is **blocked**, with the guard's own message naming her address.
+- The sends to `delivered@resend.dev` and to your email go through.
+
+#### Exam note
+
+Exam answer: the guide names only PostToolUse, for cleaning up tool results. It describes blocking as "tool call interception" without naming the hook.
+
 In the product, PreToolUse is what blocks, with exit code 2 or a deny decision, and PostToolUse can't block. On the exam, match the behaviour described.
 
-## Step 11 · Practice launch  *(Real-world skill)*
+## Step 11 · Practice launch
 
-Send each group its first email, safely, and check that it was delivered.
+*Send each group its first email, safely, and check that it was delivered.*
 
 **Build**
+
+*(Paste in Claude Code)*
+
 ```
 Let's do a practice launch.
 
@@ -534,6 +642,9 @@ Then list the emails you sent and show me a table: group, subject, status.
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check my practice launch. Don't send anything new and don't change any files.
 
@@ -546,10 +657,19 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: what would change if I switched from practice mode to my real Resend account, and why the guard still matters then.
 ```
 
-**You'll know it worked when**
-- Three emails tagged [tea-curious], [gift-buyers] and [daily-drinkers], all delivered, all to test addresses.
+#### You'll know it worked when
 
-*Optional: send one real email to yourself.*
+- Three emails tagged `[tea-curious]`, `[gift-buyers]` and `[daily-drinkers]`, all delivered, all to test addresses.
+
+1. Sign up for a free account at resend.com with the same email as your `MY_EMAIL`.
+2. In Resend, create an API key. Never paste it into a file or into the chat.
+3. Close Claude Code. In your terminal, set the key and the real address for this window only.
+
+              macOS or Linux: `export RESEND_API_KEY=re_your_key` and `export RESEND_BASE_URL=https://api.resend.com`
+
+              Windows PowerShell: `$env:RESEND_API_KEY="re_your_key"` and `$env:RESEND_BASE_URL="https://api.resend.com"`
+4. Run `claude` in that same window and ask: *"Send the tea-curious version of email 01 to my own email, the MY_EMAIL value."*
+5. Check your inbox. Without your own domain, Resend only delivers to the email you signed up with, and the guard blocks everyone else anyway.
 
 ---
 
@@ -559,46 +679,48 @@ Pick work up across days, try two ideas side by side, review automatically, and 
 
 ## Step 12 · Resume and fork  *(1.7)*
 
-Pick up earlier work by name, and try two ideas from the same starting point.
+*Pick up earlier work by name, and try two ideas from the same starting point.*
 
 **In plain words:** a named session is a bookmark. A fork is a fork in the road: two paths from the same spot. Forks share the files on your computer, but not the conversation.
 
-**Part A · Start a named session:** `claude -n launch-angles`
+**Build A**
 
-Build A (paste, then `/exit`)
+*(Paste, then /exit)*
+
 ```
 Read campaigns/steep-club-launch/plan.md and each group's version of email 01. In five short bullets, tell me what each lead group cares about most. Don't write any files.
 ```
 
-**Part B · Come back later:** `claude --resume launch-angles`
+**Build B**
 
-Build B (paste, then `/exit`)
+*(Paste, then /exit)*
+
 ```
 Remind me: what did you say the gift-buyers care about most? One sentence.
 ```
 
-**Part C · First fork, with its own name:** `claude --resume launch-angles --fork-session -n angle-a`
+**Build C**
 
-Build C (paste, then `/exit`)
+*(Paste, then /exit)*
+
 ```
 Angle A: write three subject lines for email 01 that focus on a calm daily ritual. Save them to notes/angle-a.md.
 ```
 
-**Part D · Second fork, from the same spot:** `claude --resume launch-angles --fork-session -n angle-b`
+**Build D**
 
-Build D (paste, then `/exit`)
+*(Paste, then /exit)*
+
 ```
 Before you start: do you know anything about an Angle A from our conversation? Answer yes or no first.
 
 Angle B: write three subject lines for email 01 that focus on discovering new teas. Save them to notes/angle-b.md.
 ```
 
-**Part E · Start fresh from a summary.** Run `claude --resume launch-angles` and ask:
-"Read notes/angle-a.md and notes/angle-b.md. Then write notes/handoff.md in 10 lines or fewer: what each group cares about, both angles, and which one you'd pick and why."
-Then start a brand-new session with `claude` and ask:
-"Read notes/handoff.md and continue from it: write the final subject line for email 01."
-
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check my session experiment. Don't change any files.
 
@@ -610,21 +732,29 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: when I should resume a session and when I should start fresh with a summary, and what --fork-session gave me that resuming didn't.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - The resumed session remembers what it said about gift-buyers.
-- Fork B answers "no" about Angle A's conversation. It may notice the angle-a.md file, because forks share files.
+- Fork B answers "no" about Angle A's conversation. It may notice the `angle-a.md` file, because forks share files.
 
-**If something goes wrong:** "matches 2 sessions": you forked without -n, so the fork kept the original name. Use one of the session ids the error prints, and name forks from now on.
+#### If something goes wrong
 
-**Exam note:** To continue a specific earlier investigation, use `--resume <session-name>`. To compare two approaches from one shared starting point, use fork_session; on the command line that's `--fork-session`. If the old tool results are stale, start fresh with a structured summary. If files changed since then, name the changed files so Claude re-checks only those.
+**"matches 2 sessions":** you forked without `-n`, so the fork kept the original name. Use one of the session ids the error prints, and name forks from now on.
+
+#### Exam note
+
+To continue a specific earlier investigation, use `--resume <session-name>`. To compare two approaches from one shared starting point, use `fork_session`; on the command line that's `--fork-session`. If the old tool results are stale, start fresh with a structured summary. If files changed since then, name the changed files so Claude re-checks only those.
 
 ## Step 13 · Automatic review  *(3.6)*
 
-Run Claude without chatting, and get results a program can read.
+*Run Claude without chatting, and get results a program can read.*
 
 **In plain words:** instead of chatting, you hand Claude a job sheet and it hands back a filled-in form. The form's shape, called a schema, never changes, so a program can read it.
 
 **Build 1 of 2**
+
+*(Paste in Claude Code)*
+
 ```
 Make a review that runs without anyone typing, so it can later run on every pull request.
 
@@ -638,7 +768,10 @@ Make a review that runs without anyone typing, so it can later run on every pull
 Tell me what each run found and what exit code it gave.
 ```
 
-**Build 2 of 2** (same session)
+**Build 2 of 2**
+
+*(Same session)*
+
 ```
 Improve scripts/review.mjs so a second review doesn't repeat itself.
 
@@ -652,6 +785,9 @@ Tell me: did the detox finding disappear, and did anything get reported twice? C
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Test my automatic review. The script rewrites review/findings.json; don't change any other file.
 
@@ -664,25 +800,32 @@ Give me a short table: Test | Pass or Fail | What you saw.
 Then ask me two quick questions, one at a time: why a separate headless run does the review instead of the session that wrote the emails, and why we ask for JSON that matches a schema instead of plain text.
 ```
 
-**You'll know it worked when**
-- The bad email gives exit code 1 with findings like the detox claim and the second link. Your real campaign gives exit code 0.
+#### You'll know it worked when
+
+- The bad email gives **exit code 1** with findings like the detox claim and the second link. Your real campaign gives **exit code 0**.
 - After you fix one problem, the next review drops it and repeats nothing.
 - Reviews vary a little from run to run. That's why the script only fails on high severity.
 
-*Optional: every pull request.* If your studio is on GitHub, ask Claude to add a GitHub Actions workflow that runs `node scripts/review.mjs` on pull requests. It needs your ANTHROPIC_API_KEY saved as a repository secret.
+If your studio is on GitHub, ask Claude to add a GitHub Actions workflow that runs `node scripts/review.mjs` on pull requests. It needs your `ANTHROPIC_API_KEY` saved as a repository secret.
 
-**Exam note:** `-p` runs Claude without waiting for input, which fixes a CI job that hangs. `--output-format json` with `--json-schema` gives results a program can read. CLAUDE.md holds the review rules for CI runs. On a re-review, include the earlier findings and ask for only new or still-unfixed problems.
+#### Exam note
+
+`-p` runs Claude without waiting for input, which fixes a CI job that hangs. `--output-format json` with `--json-schema` gives results a program can read. CLAUDE.md holds the review rules for CI runs. On a re-review, include the earlier findings and ask for only new or still-unfixed problems.
+
 Not real: `CLAUDE_HEADLESS=true` and `--batch`. In the product, `--json-schema` takes the schema's text, not a file name.
 
-## Step 14 · Package your studio kit  *(3.4 · Real-world skill)*
+## Step 14 · Package your studio kit  *(3.4)*
 
-Plan first, turn the reusable parts into a plugin, and use it for a second client.
+*Plan first, turn the reusable parts into a plugin, and use it for a second client.*
 
 **In plain words:** a plugin is a toolbox you carry from client to client. Each client's brand book stays in that client's own office.
 
-**Before you start:** Press Shift+Tab until the bottom of the screen says plan mode. Claude will read and plan, but write nothing until you accept.
+Press `Shift+Tab` until the bottom of the screen says **plan mode**. Claude will read and plan, but write nothing until you accept.
 
-**Build 1 of 3** (paste in plan mode)
+**Build 1 of 3**
+
+*(Paste in plan mode)*
+
 ```
 Plan this first. Don't build anything yet.
 
@@ -699,14 +842,20 @@ Brand voice, leads and campaigns stay in each client's own repo. The README shou
 Tell me which files you'll create, what you'll change from the originals, and anything that won't work outside this studio.
 ```
 
-**Then:** Read the plan. Find one thing it says won't travel to a new client. Then accept the plan, or paste:
+Read the plan. Find one thing it says won't travel to a new client. Then accept the plan, or paste:
 
-**Build 2 of 3** (after you read the plan)
+**Build 2 of 3**
+
+*(After you read the plan)*
+
 ```
 The plan looks good. Build it. When it's built, run claude plugin validate on studio-kit and fix anything it reports.
 ```
 
-**Build 3 of 3** (same session)
+**Build 3 of 3**
+
+*(Same session)*
+
 ```
 Set up a second, made-up client so I can test studio-kit somewhere new. Create a folder next to this one called client-two, for a small bakery called Rise & Crumb, with:
 - brand/voice.md: a short voice guide (warm and cheerful, no health claims, sign off with "Fresh from the oven,")
@@ -718,12 +867,14 @@ Set up a second, made-up client so I can test studio-kit somewhere new. Create a
 Then run git init in client-two and commit everything there. Don't install studio-kit; I'll load it myself.
 ```
 
-**Then**
-- `/exit`, then `cd ../client-two`
-- Start Claude Code with your kit loaded: `claude --plugin-dir ../studio-kit`
-- Approve the resend server when asked. Keep the practice server running.
+1. `/exit`, then `cd ../client-two`
+2. Start Claude Code with your kit loaded: `claude --plugin-dir ../studio-kit`
+3. Approve the resend server when asked. Keep the practice server running.
 
-**Check** (inside client-two, then paste)
+**Check**
+
+*(Inside client-two, then paste)*
+
 ```
 Test the studio-kit plugin in this client. Only the personalize skill may write files.
 
@@ -736,14 +887,19 @@ Give me a short table: Test | Pass or Fail | What happened.
 Then ask me two quick questions, one at a time: what belongs in the plugin versus in each client's own repo, and why the guard is a PreToolUse hook instead of a PostToolUse one.
 ```
 
-**You'll know it worked when**
-- `claude plugin validate` says Validation passed. A missing-icon warning is fine.
-- In client-two you see studio-kit:personalize and studio-kit:email-reviewer. Personalize uses the bakery's own groups.
+#### You'll know it worked when
+
+- `claude plugin validate` says **Validation passed**. A missing-icon warning is fine.
+- In client-two you see `studio-kit:personalize` and `studio-kit:email-reviewer`. Personalize uses the bakery's own groups.
 - The kit's guard blocks a send to a bakery lead.
 
-**If something goes wrong:** "Kettlebird" shows up in client-two: a rule was copied without being adapted. Rules belong to each client, so ask Claude to update the footer and link for Rise & Crumb.
+#### If something goes wrong
 
-**Exam note:** Use plan mode when a task is large, has several valid approaches, involves design decisions or touches many files. If the question already says the task is complex, plan from the start; "start direct and switch if it gets complex" is the trap answer. Plugins themselves aren't on the exam, and CLAUDE.md and rules always stay in the repo.
+**"Kettlebird" shows up in client-two:** a rule was copied without being adapted. Rules belong to each client, so ask Claude to update the footer and link for Rise & Crumb.
+
+#### Exam note
+
+Use plan mode when a task is large, has several valid approaches, involves design decisions or touches many files. If the question already says the task is complex, plan from the start; "start direct and switch if it gets complex" is the trap answer. Plugins themselves aren't on the exam, and CLAUDE.md and rules always stay in the repo.
 
 ---
 
@@ -753,32 +909,44 @@ A bigger pile of text, and the habits that keep Claude accurate when its memory 
 
 ## Step 15 · What customers love  *(5.4)*
 
-Keep track of findings across many files, even after Claude's memory is squeezed.
+*Keep track of findings across many files, even after Claude's memory is squeezed.*
 
 **In plain words:** when Claude's memory gets squeezed, a notebook still has everything. So write in the notebook as you go, not at the end.
 
-**Build 1 of 3** (paste in Claude Code, in the Kettlebird studio)
+**Build 1 of 3**
+
+*(Paste in Claude Code (in the Kettlebird studio))*
+
 ```
 Create practice data: notes/reviews/ with 120 short made-up customer reviews of Kettlebird's earlier tea sampler box, in 6 files of 20 reviews each (reviews-1.md to reviews-6.md). Make them varied and realistic: name specific teas, mix praise with complaints (packaging, slow shipping, too little of a favourite tea, confusing brewing instructions), and give each review a star rating. Don't summarise them.
 ```
 
-**Then:** Start a named session: `claude -n review-dig`
+Start a named session: `claude -n review-dig`
 
-**Build 2 of 3** (paste in the named session)
+**Build 2 of 3**
+
+*(Paste in the named session)*
+
 ```
 Find the top 5 things customers love and the top 3 complaints across all the reviews in notes/reviews/.
 
 Use a subagent to read the review files, so the raw reviews don't fill up this conversation. Tell the subagent to keep a scratchpad at notes/scratchpad.md and to add to it after each file, one line per finding: the file, the finding, how many reviews mention it, and one short quote. At the end, give me the top 5 and top 3 with how often each came up.
 ```
 
-**Then:** Type `/compact`. This squeezes the conversation into a short summary.
+Type `/compact`. This squeezes the conversation into a short summary.
 
-**Build 3 of 3** (same session, after /compact)
+**Build 3 of 3**
+
+*(Same session, after /compact)*
+
 ```
 Which review file had the most complaints about damaged or wet packaging? Quote one. Answer from memory first. Then check notes/scratchpad.md and the files, and tell me whether your memory was right.
 ```
 
 **Check**
+
+*(New session, then paste)*
+
 ```
 Check my scratchpad. Don't change any files.
 
@@ -789,12 +957,15 @@ Give me a short table: Test | Pass or Fail | What you found.
 Then ask me two quick questions, one at a time: why we write to a scratchpad as we go, and what /compact does to Claude's memory.
 ```
 
-**You'll know it worked when**
+#### You'll know it worked when
+
 - Your main session only sends work to a subagent. The raw reviews never fill your chat.
-- After /compact, memory gets details wrong or can't answer, and the scratchpad can.
+- After `/compact`, memory gets details wrong or can't answer, and the scratchpad can.
 - When we tried this with a thin scratchpad (one line per file), it couldn't answer either. Write one line per finding.
 
-**Exam note:** The warning sign is answers that stop matching earlier findings, or that talk about "typical patterns" instead of the specific things found. The fixes are scratchpad files, subagents, summaries between phases, saved state files, and /compact. A bigger context window is never the answer.
+#### Exam note
+
+The warning sign is answers that stop matching earlier findings, or that talk about "typical patterns" instead of the specific things found. The fixes are scratchpad files, subagents, summaries between phases, saved state files, and `/compact`. A bigger context window is never the answer.
 
 ---
 
@@ -823,7 +994,7 @@ Not practised here: MCP resources (catalogs of data), Edit's fallback when its a
 - **Session**: One conversation with Claude Code. `/exit` ends it; running `claude` starts a new one.
 - **Commit**: A saved snapshot of your files in git. You can always go back to it.
 - **Plugin**: A package of skills, commands, hooks and connections that you install in one go.
-- **Skill**: Saved instructions Claude follows when you call it with /name, or when the task fits.
+- **Skill**: Saved instructions Claude follows when you call it with `/name`, or when the task fits.
 - **MCP server**: A connection that gives Claude tools from another service, like Resend.
 - **Hook**: A small script Claude Code runs at a set moment, like just before a tool runs. It can block the action.
 - **Practice mode**: Resend's tools connected to a pretend email server on your own computer.

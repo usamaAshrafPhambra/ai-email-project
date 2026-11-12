@@ -1,29 +1,28 @@
-# CLAUDE.md
+# Kettlebird Tea Email Studio
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This studio is where we plan and write email campaigns for a small business: Kettlebird Tea, a tea shop launching a monthly tea box called The Steep Club.
 
-## What this repo is
+## Folders
 
-The working folder for the **Email Studio Lab** course: a hands-on Claude Code course in 15 steps with no coding. The learner builds an email marketing studio for a made-up tea shop, **Kettlebird Tea**, which is launching a monthly tea box called **The Steep Club**. Claude plans the campaign, writes and personalizes the emails, and sends them only to a practice Resend server (`emulate`, on localhost:4000).
+- `brand/` — the shop's brand voice and style notes that every email should follow.
+- `leads/` — practice contact lists (made-up people only).
+- `campaigns/` — one folder per campaign, with its plan and its emails.
+- `notes/` — my own notes, research and decisions.
 
-- `assignment.md` has the full course: every step's Build and Check prompts, its success markers, its exam note (CCAR-F objectives), the exam map and the glossary.
-- The progress tracker was `course/PROGRESS.md`. It is in git history (`git show HEAD:course/PROGRESS.md`).
-- There's no app code yet. The studio's files (`brand/`, `leads/`, `campaigns/`, `.claude/`, `.mcp.json`, `scripts/review.mjs`) appear as the learner works through the steps. The target layout is under "Your studio at the end" in `assignment.md`.
+## Rules
 
-## How to work here: guide, don't build
+- Write in plain English. Short sentences, everyday words, no jargon.
+- Never send email to real people. Practice leads use `@example.com` addresses. Sends go only to `@resend.dev` addresses or to my own address.
+- Ask me before deleting anything.
+- Never commit secrets, such as an API key or my email in `.claude/settings.local.json`.
 
-The learner wants to learn by doing every step themselves.
+## Course guidance (Email Studio Lab)
 
-- Don't run commands, create or edit files, or commit unless the learner pastes a course prompt or clearly asks for that action.
-- When asked "what's next?", say which step comes next and which prompt to paste. Don't do it for them.
-- If they're stuck, give a hint first. Show the full answer only if they ask.
-- Go one step at a time, in order (1 → 15). Don't start the next step until they say the current one is done.
-- Each step follows the course loop: **BUILD** (paste the build prompt) → **FRESH** (`/exit`, then `claude`) → **CHECK** (paste the check prompt in the new session) → **DONE** (answer the check's questions, then tick the step).
-- Before each step, explain briefly in plain words what it teaches and which CCAR-F objective it covers. After the step, remind them of the exam note and ask one quick question to check they understood.
-- Use the course prompts exactly as written. If one fails, help the learner understand why before fixing it.
+This folder is also my working folder for the Email Studio Lab course. The full course is in `assignment.md`.
 
-## Safety rules
-
-- Practice mode only. Practice leads use `@example.com` addresses. Sends go only to `@resend.dev` addresses or to the learner's own address.
-- Never commit secrets: no Resend API key, and not the learner's email in `.claude/settings.local.json`.
-- Ask before deleting anything.
+- I want to learn by doing every step myself. Don't run commands, create or edit files, or commit unless I paste a course prompt or clearly ask for that action.
+- When I ask "what's next?", tell me which step comes next and which prompt to paste. Don't do it for me.
+- If I'm stuck, give a hint first. Show the full answer only if I ask.
+- Go one step at a time, in order (1 → 15). Each step is: BUILD (paste the build prompt) → FRESH (`/exit`, then `claude`) → CHECK (paste the check prompt in the new session) → DONE.
+- Before each step, explain briefly what it teaches and which CCAR-F objective it covers. After it, remind me of the exam note and ask one quick question.
+- Use the course prompts exactly as written. If one fails, help me understand why before fixing it.

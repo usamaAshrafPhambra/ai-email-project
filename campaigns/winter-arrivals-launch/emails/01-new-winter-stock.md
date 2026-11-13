@@ -5,11 +5,11 @@ Dear {{first_name}},
 
 We are happy to share some good news. Our new winter stock has arrived.
 
-Each fabric has been **carefully chosen** by our family. We looked for fabric that feels good, wears well and is **made to last** through the colder months.
+Each fabric has been carefully chosen by our family. We looked for fabric that feels good, wears well and is made to last through the colder months.
 
 You asked us to tell you when new stock arrives, so you are among the first to hear. Thank you for that.
 
-You can see every new fabric, with real photos and its details, on our new arrivals page. You are also always welcome to visit us in the shop, see the fabric for yourself and ask us anything.
+You can see every new fabric, with real photos and its details, on our new arrivals page. You are also always welcome to visit us in the shop, see the fabric for yourself and ask us anything. Or simply reply to this email, and we will get back to you.
 
 [See the new arrivals](https://usamafabric.example/new-arrivals)
 

@@ -1,17 +1,17 @@
-Subject: Thank you for your trust over the years
+Subject: Thank you for your trust
 Preview: A personal thank-you, and a look at some of our favourite new arrivals.
 
 Dear {{first_name}},
 
 We wanted to write to you personally, simply to say thank you.
 
-You have chosen Usama Fabric again and again. As a family business, that means a great deal to us. Our name is **trusted by generations** of families, and that trust comes from customers like you.
+You have chosen Usama Fabric again and again. As a family business, that means a great deal to us. Our name is trusted by generations of families, and that trust comes from customers like you.
 
-This winter, we have **carefully chosen** new fabric that we are proud of. A few pieces have quickly become our own favourites, and we thought you would like to see them.
+This winter, we have carefully chosen new fabric that we are proud of. A few pieces have quickly become our own favourites, and we thought you would like to see them.
 
-As always, we will keep choosing **decent, long-lasting** fabric that we would be happy to use ourselves. If you visit us in the shop, please do say hello. We would be glad to see you.
+As always, we will keep choosing decent, long-lasting fabric that we would be happy to use ourselves. If you visit us in the shop, please do say hello. We would be glad to see you.
 
-[See our favourite new arrivals](https://usamafabric.example/new-arrivals)
+[See the new arrivals](https://usamafabric.example/new-arrivals)
 
 Thank you for your trust,
 Team Usama Fabric

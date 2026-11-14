@@ -13,6 +13,7 @@ This studio is where we plan and write email campaigns for a small business: Usa
 
 - Write in plain English. Short sentences, everyday words, no jargon.
 - Never send email to real people. Practice leads use `@example.com` addresses. Sends go only to `@resend.dev` addresses or to my own address.
+  - Sending through Resend is allowed only to Resend's test addresses (ending in `@resend.dev`) and to my own email address, usamafsd78@gmail.com. A guard will enforce this in the next step.
 - Ask me before deleting anything.
 - Never commit secrets, such as an API key or my email in `.claude/settings.local.json`.
 

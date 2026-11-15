@@ -1,0 +1,32 @@
+{
+  "findings": [
+    {
+      "file": "campaigns/winter-arrivals-launch/emails/04-thank-you-loyal.md",
+      "line": 2,
+      "severity": "medium",
+      "problem": "The preview promises 'a look at some of our favourite new arrivals', and line 10 adds 'we thought you would like to see them'. But the only link goes to the general new-arrivals page, and there is no favourites page. This breaks the emails.md link rule: 'Don't promise a special page (like \"our favourites\") if the link goes to the general new-arrivals page.'",
+      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Line 10: 'A few pieces have quickly become our own favourites. You can find them among all our new arrivals.' Or build a real favourites page and link to it with matching button text."
+    },
+    {
+      "file": "campaigns/winter-arrivals-launch/groups/loyal-repeat/emails/04-thank-you-loyal.md",
+      "line": 2,
+      "severity": "medium",
+      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
+      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+    },
+    {
+      "file": "campaigns/winter-arrivals-launch/groups/gift-and-wedding/emails/04-thank-you-loyal.md",
+      "line": 2,
+      "severity": "medium",
+      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
+      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+    },
+    {
+      "file": "campaigns/winter-arrivals-launch/groups/home-tailoring/emails/04-thank-you-loyal.md",
+      "line": 2,
+      "severity": "medium",
+      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
+      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+    }
+  ]
+}

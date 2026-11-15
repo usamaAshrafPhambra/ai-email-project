@@ -2,31 +2,31 @@
   "findings": [
     {
       "file": "campaigns/winter-arrivals-launch/emails/04-thank-you-loyal.md",
-      "line": 2,
+      "line": 10,
       "severity": "medium",
-      "problem": "The preview promises 'a look at some of our favourite new arrivals', and line 10 adds 'we thought you would like to see them'. But the only link goes to the general new-arrivals page, and there is no favourites page. This breaks the emails.md link rule: 'Don't promise a special page (like \"our favourites\") if the link goes to the general new-arrivals page.'",
-      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Line 10: 'A few pieces have quickly become our own favourites. You can find them among all our new arrivals.' Or build a real favourites page and link to it with matching button text."
+      "problem": "The preview (line 2) promises 'a look at some of our favourite new arrivals', and line 10 says 'A few pieces have quickly become our own favourites, and we thought you would like to see them.' But the only link goes to the general new-arrivals page (line 14). This breaks the link rule in .claude/rules/emails.md: don't promise a special 'our favourites' page when the link opens the general new-arrivals page.",
+      "fix": "Stop promising a favourites view. Change the preview to something like 'A personal thank-you, and a look at our new winter arrivals.' Change line 10 to 'This winter, we have carefully chosen new fabric that we are proud of, and we thought you would like to see it.' Or, if a real favourites page exists, point the link to it with matching button text."
     },
     {
       "file": "campaigns/winter-arrivals-launch/groups/loyal-repeat/emails/04-thank-you-loyal.md",
-      "line": 2,
+      "line": 10,
       "severity": "medium",
-      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
-      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+      "problem": "The preview (line 2) promises 'a look at some of our favourite new arrivals', and line 10 talks about 'our own favourites… we thought of you when we chose them'. The link (line 14) only opens the general new-arrivals page, so the email promises a special page that doesn't exist.",
+      "fix": "Change the preview to 'A personal thank-you, and a look at our new winter arrivals.' Change line 10 to drop the favourites promise, for example: 'This winter, we have carefully chosen new fabric that we are proud of, and we thought of you as we chose it.'"
     },
     {
       "file": "campaigns/winter-arrivals-launch/groups/gift-and-wedding/emails/04-thank-you-loyal.md",
-      "line": 2,
+      "line": 10,
       "severity": "medium",
-      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
-      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+      "problem": "The preview (line 2) promises 'a look at some of our favourite new arrivals', and line 10 says 'A few pieces have quickly become our own favourites, and we think they would make a lovely gift.' The link (line 14) only opens the general new-arrivals page, so the email promises a special page that doesn't exist.",
+      "fix": "Change the preview to 'A personal thank-you, and a look at our new winter arrivals.' Change line 10 to: 'This winter, we have carefully chosen new fabric that we are proud of, and we think some of it would make a lovely gift.'"
     },
     {
       "file": "campaigns/winter-arrivals-launch/groups/home-tailoring/emails/04-thank-you-loyal.md",
-      "line": 2,
+      "line": 10,
       "severity": "medium",
-      "problem": "Same as the base email: the preview promises 'a look at some of our favourite new arrivals', but the link goes to the general new-arrivals page.",
-      "fix": "Preview: 'A personal thank-you, and a first look at our new winter arrivals.' Optionally add to line 10: 'You can find them among all our new arrivals.'"
+      "problem": "The preview (line 2) promises 'a look at some of our favourite new arrivals', and line 10 says 'A few pieces have quickly become our own favourites, and we think they would be a pleasure to stitch.' The link (line 14) only opens the general new-arrivals page, so the email promises a special page that doesn't exist.",
+      "fix": "Change the preview to 'A personal thank-you, and a look at our new winter arrivals.' Change line 10 to: 'This winter, we have carefully chosen new fabric that we are proud of, and we think it would be a pleasure to stitch.'"
     }
   ]
 }
